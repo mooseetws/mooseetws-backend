@@ -7,8 +7,7 @@ const DATA_COUNT = 10;
 const getPeopleList = () => {
   let peopleList = [];
   for (let i = 0; i < DATA_COUNT; i += 1) {
-    let phnNumber = i;
-    peopleList.push(new Person(phnNumber));
+    peopleList.push(new Person(i, i));
   }
   return peopleList;
 };

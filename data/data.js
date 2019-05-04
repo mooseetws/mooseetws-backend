@@ -16,21 +16,6 @@ exports.getLampList = lamp.getLampList;
 exports.getPeopleList = person.getPeopleList;
 exports.getVehicleList = vehicle.getVehicleList;
 
-const getVehiclesWithPeopleAssign = () => {
-  let vehicleList = vehicle.getVehicleList();
-  let peopleList = person.getPeopleList();
-
-  // for each vehicles assign a person
-  for (let i = 0; i < vehicleList.length; i += 1) {
-    let curVehicle = vehicleList[i];
-    let curPeople = peopleList[i];
-    curVehicle.addPerson(curPeople);
-  }
-  return vehicleList;
-};
-
-exports.getVehiclesWithPeopleAssign = getVehiclesWithPeopleAssign;
-
 function isPrime (n) {
   if (n < 2) return false;
   if (n === 2) return true; // 2 is a special case
@@ -45,16 +30,16 @@ function isPrime (n) {
 // randomly assign vehicles to some light bulb that has id === prime
 const generateTopology1 = () => {
   let smartLamps = lamp.getLampList();
-  let vehicleList = getVehiclesWithPeopleAssign();
+  let peopleList = person.getPeopleList();
 
   let at = 0;
   for (let i = 0; i < smartLamps.length; i += 1) {
     let curLamp = smartLamps[i];
     if (isPrime(curLamp.id)) {
-      let curVehicle = at < vehicleList.length ? vehicleList[at] : undefined;
+      let curPerson = at < peopleList.length ? peopleList[at] : undefined;
       at += 1;
-      if (curVehicle) {
-        curLamp.addVehicle(curVehicle);
+      if (curPerson) {
+        curLamp.addPerson(curPerson);
       }
     }
   }
