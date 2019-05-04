@@ -7,10 +7,6 @@ class Person {
     this.registrationID = registrationID;
   }
 
-  registrationID () {
-    return this.registrationID;
-  }
-
   toJSON () {
     return {
       licensePlate: this.licensePlate,
