@@ -1,0 +1,10 @@
+{
+  "mobile": true,
+  "co-ordinates": {
+    "lat": 0,
+    "lan": 0
+  },
+  "timestamps": "",
+  "message": "test",
+  "type": "sometype"
+}
