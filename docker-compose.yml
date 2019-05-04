@@ -1,0 +1,12 @@
+version: "3"
+services:
+  mooseetws-backend:
+    build:
+      context: .
+    image: mooseetws-backend
+    container_name: mooseetws-backend
+    environment:
+      PORT: 8080
+    ports:
+      - "8080:8080"
+    command: npm start
