@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 const {
-  getMobileData
+  getPIData
 } = require('./../data/data');
 
 router.get('/', function (req, res, next) {
-  const data = getMobileData();
+  const data = getPIData();
   res.status(200).json(data);
 });
 
