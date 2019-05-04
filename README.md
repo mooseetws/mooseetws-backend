@@ -12,10 +12,10 @@ Backend server for service management, and bridging.
     https://mooseetws.herokuapp.com/api/mobile/v1
     
    - Example payload 
-        {
-            lat: -99,
-            lan: 10,
-        }
+        [
+            {lat: -99,lan: 10},
+            {lat: -20,lan: 5}
+        ]
     ```
     
     - Register a device
