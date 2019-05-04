@@ -5,6 +5,14 @@ class SmartLamp {
     this.id = lampID;
     this.lat = lat;
     this.long = long;
+    this.vehicles = [];
+  }
+  addVehicle (vehicle = undefined) {
+    if (!vehicle) {
+      return;
+    }
+    this.vehicles.push(vehicle);
+    return vehicle;
   }
 }
 

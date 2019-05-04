@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const dbHandler = require('./../db/dbhandler');
 
 const {
   getPIData
@@ -13,11 +12,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
   const data = req.body;
-  let success = dbHandler.addPiData(data);
-  if (success === false) {
-    return res.status(500).send('');
-  }
-  return res.status(200).send(success);
+  return res.status(200).send(data);
 });
 
 module.exports = router;

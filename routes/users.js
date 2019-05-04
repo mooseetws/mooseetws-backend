@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+const {
+  generateTopology1
+} = require('./../data/data');
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+  let topology = generateTopology1();
+  res.status(200).json(topology);
 });
 
 module.exports = router;

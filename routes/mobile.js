@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const dbHandler = require('./../db/dbhandler');
 
 const {
   getMobileData
 } = require('./../data/data');
 
+const smartStore = require('./../db/simplestore');
 router.get('/', function (req, res, next) {
   const data = getMobileData();
   res.status(200).json(data);
@@ -13,11 +13,8 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
   const data = req.body;
-  let success = dbHandler.addMobile(data);
-  if (success === false) {
-    return res.status(500).send('');
-  }
-  return res.status(200).send(success);
+  let status = smartStore.addOrUpdatePerson(data);
+  return res.status(200).send(status);
 });
 
 module.exports = router;
