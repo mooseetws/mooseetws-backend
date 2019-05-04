@@ -9,7 +9,8 @@ Backend server for service management, and bridging.
     - GET a list of location where moose is found
     
     ```
-    https://mooseetws.herokuapp.com/api/mobile/v1
+    curl --request GET \
+      --url http://localhost:3000/api/mobile/v1
     
    - Example payload 
         [
