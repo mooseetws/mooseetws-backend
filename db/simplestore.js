@@ -7,6 +7,14 @@ const adapter = new FileSync('db.json');
 const db = low(adapter);
 const Person = require('./person');
 
+/*
+{
+  objectType:
+  confidence:
+  poleId:
+}
+*/
+
 db.defaults({ person: [] })
   .write();
 
@@ -18,16 +26,12 @@ class SimpleStore {
   addOrUpdatePerson (data) {
     let { licensePlate, registrationID } = data;
     if (licensePlate && registrationID) {
+      console.warn('->', licensePlate, registrationID);
       let person = new Person(licensePlate, registrationID);
-      let value = db.get('person')
-        .find({ 'registrationID': person.registrationID })
-        .value();
+      db.get('person')
+        .push(person.toJSON())
+        .write();
 
-      if (!value) {
-        db.get('person')
-          .push(person.toJSON())
-          .write();
-      }
       return person;
     }
   }

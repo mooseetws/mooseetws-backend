@@ -15,13 +15,15 @@ const {
 } = require('./../engine/notification');
 
 // dummy topology
-const topo1 = generateTopology1();
 
 // send if of the lamp. then we will notify
 router.get('/id/:id', function (req, res, next) {
+  const topo1 = generateTopology1();
   const id = parseInt(req.params.id, 10);
   let lampList = getNearestLampList(id, topo1);
+  console.log(lampList);
   let personList = getNotificationIds(lampList);
+  console.log(personList);
   sendNotification(personList);
 
   res.status(200).json(personList);
