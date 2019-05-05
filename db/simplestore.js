@@ -6,8 +6,6 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 const Person = require('./person');
-const SmartLamp = require('./smartlamp');
-
 
 /*
 {
@@ -17,7 +15,7 @@ const SmartLamp = require('./smartlamp');
 }
 */
 
-db.defaults({ person: [], smartLightPost = getLampList() })
+db.defaults({ person: [] })
   .write();
 
 class SimpleStore {
@@ -28,26 +26,14 @@ class SimpleStore {
   addOrUpdatePerson (data) {
     let { licensePlate, registrationID } = data;
     if (licensePlate && registrationID) {
+      console.warn('->', licensePlate, registrationID);
       let person = new Person(licensePlate, registrationID);
-      let value = db.get('person')
-        .find({ 'registrationID': person.registrationID })
-        .value();
+      db.get('person')
+        .push(person.toJSON())
+        .write();
 
-      if (!value) {
-        db.get('person')
-          .push(person.toJSON())
-          .write();
-      }
       return person;
     }
-  }
-
-  registerSmart (lampID, registrationNumber) {
-
-    let value = db.get('smartLightPost')
-      .find({ 'id': lampID })
-      .value();
-
   }
 
   getPerson () {

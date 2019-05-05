@@ -13,6 +13,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
   const data = req.body;
+  console.warn('data', data);
   let status = smartStore.addOrUpdatePerson(data);
   return res.status(200).send(status);
 });
