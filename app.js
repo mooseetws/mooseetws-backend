@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var usersRouter = require('./routes/users');
 
 const modileEndpoint = require('./routes/mobile');
 const piEndpoint = require('./routes/pi');
@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
 app.use('/api/mobile/v1', modileEndpoint);
 app.use('/api/pi/v1', piEndpoint);
 app.use('/api/lamp/v1/notify', lampNotify);

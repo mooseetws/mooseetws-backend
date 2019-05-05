@@ -36,4 +36,10 @@ Backend server for service management, and bridging.
         https://mooseetws.herokuapp.com/api/pi/v1
     ```
     
+- Moose notification
+    - GET provide a notification from certain smart lamp post 
+    ``` 
+        https://mooseetws.herokuapp.com/api/lamp/v1/notify/id/{id}
+    ```
+    
     

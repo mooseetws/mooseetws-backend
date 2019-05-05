@@ -31,6 +31,10 @@ class SimpleStore {
       return person;
     }
   }
+
+  getPerson () {
+    return db.get('person').value();
+  }
 }
 
 module.exports = new SimpleStore();

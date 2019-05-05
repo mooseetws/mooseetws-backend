@@ -1,10 +1,12 @@
-{
-  "mobile": true,
-  "co-ordinates": {
+[
+  {
     "lat": 0,
-    "lan": 0
+    "lan": 0,
+    "id": 1
   },
-  "timestamps": "",
-  "message": "test",
-  "type": "pi"
-}
+  {
+    "lat": 0,
+    "lan": 0,
+    "id": 2
+  }
+]

@@ -17,4 +17,18 @@ const getNearestLampList = (lampId, allLamps = []) => {
   return lampLists;
 };
 
+// list of person to those we will send notification
+const getNotificationIds = (lampList = []) => {
+  let retval = [];
+  for (let i = 0; i < lampList.length; i += 1) {
+    let { personList } = lampList[i];
+    for (let curPerson of personList) {
+      retval.push(curPerson);
+    }
+  }
+  // console.warn(retval);
+  return retval;
+};
+
 exports.getNearestLampList = getNearestLampList;
+exports.getNotificationIds = getNotificationIds;
