@@ -6,7 +6,7 @@ Backend server for service management, and bridging.
 
 - Mobile endpoint
 
-    - GET a list of location where moose is found
+    - GET - a list of location where moose is found
     
     ```
     curl --request GET \
@@ -19,7 +19,7 @@ Backend server for service management, and bridging.
         ]
     ```
     
-    - Register a device
+    - POST - Register a device
     
     ```
     curl --request POST \
@@ -37,7 +37,7 @@ Backend server for service management, and bridging.
     ```
     
 - Moose notification
-    - GET provide a notification from certain smart lamp post 
+    - GET - submit a notification from certain smart lamp post 
     ``` 
         https://mooseetws.herokuapp.com/api/lamp/v1/notify/id/{id}
     ```
