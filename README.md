@@ -2,6 +2,24 @@
 Backend server for service management, and bridging.
 
 
+
+#### How to install
+
+- Make sure we have node.js installed in the system
+- Install dependencies 
+``` npm install ```
+- run development server 
+``` npm start debug ```
+- run production environment 
+``` npm start ```
+
+#### Run in docker
+- Build docker
+``` docker-compose build ```
+- Run 
+``` docker-compose up```
+
+
 #### Endpoints
 
 - Mobile endpoint
