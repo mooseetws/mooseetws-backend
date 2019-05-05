@@ -20,6 +20,14 @@ router.get('/', function (req, res, next) {
   res.status(200).json(data);
 });
 
+/**
+ * PI endpoint
+ * It will receive a list of detected object passed from tensorflow
+ * and store it in the database.
+ * # todo if the object type if categorised as hazardous
+ * Send notification to nearby poles immediately
+ */
+
 router.post('/', function (req, res, next) {
   const data = req.body;
 

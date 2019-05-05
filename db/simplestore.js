@@ -1,4 +1,6 @@
 'use strict';
+// todo move to use-case specific right database
+// may be realtime database like rethinkdb, or service like firebase, or pubnub
 
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');

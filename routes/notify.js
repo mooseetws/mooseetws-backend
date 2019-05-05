@@ -16,6 +16,10 @@ const {
 
 // dummy topology
 
+/**
+ * Notification endpoint to send firebase notification from certain smart pole
+ */
+
 // send if of the lamp. then we will notify
 router.get('/id/:id', function (req, res, next) {
   const topo1 = generateTopology1();

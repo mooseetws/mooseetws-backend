@@ -1,7 +1,13 @@
 'use strict';
 
+/***
+ * #todo moved to database
+ * Dummy data generator
+ * @type {number} lamp post id
+ * @type {array} a list of all lamp-post
+ * @return {array} a list of nearby lamppost from the given lamppost
+ */
 const THRESHOLD = 3;
-
 const getNearestLampList = (lampId, allLamps = []) => {
   let lampLists = [];
   for (let i = 0; i < THRESHOLD; i += 1) {

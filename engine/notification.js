@@ -1,8 +1,13 @@
 'use strict';
 
 const request = require('request');
+// todo moved to database
 const authKey = 'key=AAAALlxqDZk:APA91bEm2WHqfh0K5afu_KTLuYeYCR4qkA7f7p_9g8IQZ-WKGxBHOz5IQ5ghLC14RybU4PobkuSj1WILNveq-5ZmmU1z_ky3Kjvg8rUcRCcX22yfOcjIshbll3KyrqD1SB8m-XOasKgG';
 
+/***
+ * #todo move to non-blocking background task
+ * @param personList - a list of person to whom we will send notification
+ */
 const sendNotification = (personList) => {
   let data = { notification: { title: 'Moose detected!', body: 'Be careful, moose ahead!' } };
   for (let curPerson of personList) {
