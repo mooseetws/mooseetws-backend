@@ -35,13 +35,13 @@ const generateTopology1 = () => {
   let at = 0;
   for (let i = 0; i < smartLamps.length; i += 1) {
     let curLamp = smartLamps[i];
-    if (isPrime(curLamp.id)) {
-      let curPerson = at < peopleList.length ? peopleList[at] : undefined;
-      at += 1;
-      if (curPerson) {
-        curLamp.addPerson(curPerson);
-      }
+    // if (isPrime(curLamp.id)) {
+    let curPerson = at < peopleList.length ? peopleList[at] : undefined;
+    at += 1;
+    if (curPerson) {
+      curLamp.addPerson(curPerson);
     }
+    // }
   }
   return smartLamps;
 };
