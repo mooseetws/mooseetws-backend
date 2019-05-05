@@ -36,6 +36,14 @@ Backend server for service management, and bridging.
         https://mooseetws.herokuapp.com/api/pi/v1
     ```
     
+    - POST
+    ```
+    curl --request POST \
+      --url https://mooseetws.herokuapp.com/api/pi/v1/ \
+      --header 'content-type: application/json' \
+      --data '{"objectType": "car", "confidence": 25, "poleId": 1}'
+    ```
+    
 - Moose notification
     - GET - submit a notification from certain smart lamp post 
     ``` 
